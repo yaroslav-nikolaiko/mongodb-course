@@ -6,7 +6,7 @@
   "dependencies": {
     "bcrypt-nodejs": "~0.0.3",
     "consolidate": "~0.9.1",
-    "express": "~3.x",
+    "express": "~3.5",
     "mongodb": "~1.4.34",
     "swig": "~0.14.0",
     "validator": "~1.1.3"

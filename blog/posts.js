@@ -30,7 +30,14 @@ function PostsDAO(db) {
 
         // now insert the post
         // hw3.2 TODO
-        callback(Error("insertEntry Not Yet Implemented!"), null);
+        posts.insert(post, function (err, result) {
+            "use strict";
+
+            if (err) return callback(err, null);
+
+            console.log("Inserted new post");
+            callback(err, permalink);
+        });
     }
 
     this.getPosts = function(num, callback) {
@@ -82,7 +89,13 @@ function PostsDAO(db) {
         }
 
         // hw3.3 TODO
-        callback(Error("addComment Not Yet Implemented!"), null);
+        posts.update({'permalink': permalink}, {'$push': {'comments': comment}}, function(err, numModified) {
+            "use strict";
+
+            if (err) return callback(err, null);
+
+            callback(err, numModified);
+        });
     }
 }
 
